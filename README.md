@@ -102,20 +102,20 @@ Customize the tool by modifying variables in domain_checker.go:
 successStatusCodes = []int{200, 301, 302}
 ```
 
--Timeout Duration
+- Timeout Duration
 
 ```bash
 timeout = 10 * time.Second
 ```
 
--Retry Count
+- Retry Count
 
 ```bash
 retryCount = 2
 ```
 
 
--Max Concurrent Checks
+- Max Concurrent Checks
 
 ```bash
 maxConcurrentChecks = 100
@@ -183,7 +183,7 @@ go get -u github.com/chromedp/chromedp@latest
 
 2. Chromium Not Found:
 
--Install Chromium or Chrome:
+- Install Chromium or Chrome:
 
 ```bash
 sudo apt update
