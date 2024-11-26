@@ -10,3 +10,41 @@ A high-performance Go-based tool for checking the availability and responsivenes
 - Redirection Handling: Detects and logs domain redirections.
 - Customizable Parameters: Allows setting of successful status codes, timeout durations, and concurrency levels.
 - Detailed Logging: Outputs active and inactive domains to separate files for easy analysis.
+
+
+#Installation
+##Prerequisites 
+
+- Go: Version 1.16 or later. Download Go
+- Chromium or Google Chrome: Required for browser automation with chromedp.
+
+
+##Steps
+1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/domain-checker.git
+cd domain-checker
+```
+
+2. Initialize Go Modules
+
+```bash
+go mod init domain_checker
+```
+
+3. Install Dependencies
+
+```bash
+go get -u github.com/chromedp/chromedp@latest
+```
+
+4. Install Chromium or Chrome
+
+For Debian/Ubuntu:
+
+```bash
+sudo apt update
+sudo apt install chromium
+```
+
