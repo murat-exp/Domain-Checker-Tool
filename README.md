@@ -219,5 +219,5 @@ Special thanks to:
 
   ---
 
-![checker](loader.png)
+![checker](checker.png)
 
