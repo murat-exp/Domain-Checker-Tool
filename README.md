@@ -20,26 +20,26 @@ A high-performance Go-based tool for checking the availability and responsivenes
 
 
 ## Steps
-1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/murat-exp/domain-checker.git
 cd domain-checker
 ```
 
-2. Initialize Go Modules
+### 2. Initialize Go Modules
 
 ```bash
 go mod init domain_checker
 ```
 
-3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 go get -u github.com/chromedp/chromedp@latest
 ```
 
-4. Install Chromium or Chrome
+### 4. Install Chromium or Chrome
 
 For Debian/Ubuntu:
 
