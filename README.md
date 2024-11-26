@@ -28,7 +28,7 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/murat-exp/domain_checker.git
+   git clone https://github.com/murat-exp/Domain-Checker-Tool.git
    cd domain-checker
    ```
 
