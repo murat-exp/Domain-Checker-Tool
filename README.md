@@ -23,7 +23,7 @@ A high-performance Go-based tool for checking the availability and responsivenes
 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/domain-checker.git
+git clone https://github.com/murat-exp/domain-checker.git
 cd domain-checker
 ```
 
