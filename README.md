@@ -1,6 +1,5 @@
 # Domain Checker Tool
 
-![Go Version](https://img.shields.io/github/go-mod/go-version/murat-exp/domain-checker)  
 **A high-performance Go-based tool for checking the availability and responsiveness of domains, utilizing both HTTP requests and browser automation for comprehensive analysis.**
 
 ---
@@ -29,7 +28,7 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/murat-exp/domain-checker.git
+   git clone https://github.com/murat-exp/domain_checker.git
    cd domain-checker
    ```
 
