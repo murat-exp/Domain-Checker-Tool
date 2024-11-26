@@ -62,13 +62,13 @@ go run domain_checker.go [domain_list_file] [status_codes]
 
 ## Examples
 
--Default status code 200:
+- Default status code 200:
 
 ```bash
 go run domain_checker.go domains.txt
 ```
 
--Custom status codes 200, 301, 302:
+- Custom status codes 200, 301, 302:
 
 
 ```bash
