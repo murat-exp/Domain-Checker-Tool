@@ -216,3 +216,7 @@ Special thanks to:
 
 - **[Chromedp](https://github.com/chromedp/chromedp)**: For browser automation capabilities.
 - The **Go Community**: For providing a robust ecosystem for high-performance applications.
+
+  ---
+
+  checker.png
