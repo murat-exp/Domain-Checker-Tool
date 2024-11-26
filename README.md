@@ -10,7 +10,7 @@ A high-performance Go-based tool for checking the availability and responsivenes
 - Redirection Handling: Detects and logs domain redirections.
 - Customizable Parameters: Allows setting of successful status codes, timeout durations, and concurrency levels.
 - Detailed Logging: Outputs active and inactive domains to separate files for easy analysis.
-
+---
 
 #Installation
 ##Prerequisites 
@@ -47,4 +47,171 @@ For Debian/Ubuntu:
 sudo apt update
 sudo apt install chromium
 ```
+
+---
+
+#Usage
+
+```bash
+go run domain_checker.go [domain_list_file] [status_codes]
+```
+
+- domain_list_file: Path to the file containing the list of domains (one per line).
+- status_codes (Optional): Comma-separated HTTP status codes considered successful (default: 200).
+
+
+##Examples
+
+-Default status code 200:
+
+```bash
+go run domain_checker.go domains.txt
+```
+
+-Custom status codes 200, 301, 302:
+
+
+```bash
+go run domain_checker.go domains.txt 200,301,302
+```
+
+----
+
+##Examples Output
+
+```bash
+Active: http://example.com (Status Code: 200)
+Active: https://test.com (Status Code: 200) (Redirected to: newdomain.com)
+```
+
+##Generated Files
+
+- active_domains.txt: List of active domains with optional redirection info.
+- inactive_domains.txt: List of inactive or unreachable domains.
+
+
+---
+
+#Configuration
+
+Customize the tool by modifying variables in domain_checker.go:
+
+- Successful Status Codes
+
+```bash
+successStatusCodes = []int{200, 301, 302}
+```
+
+-Timeout Duration
+
+```bash
+timeout = 10 * time.Second
+```
+
+-Retry Count
+
+```bash
+retryCount = 2
+```
+
+
+-Max Concurrent Checks
+
+```bash
+maxConcurrentChecks = 100
+```
+
+---
+
+#How It Works
+
+1. Domain Reading: Reads domains from a file, ensuring each is non-empty.
+
+2. DNS Resolution: Checks if each domain is resolvable; unresolvable domains are marked inactive.
+
+3. HTTP Requests:
+
+- Sends GET requests over http:// and https://.
+- Follows redirects up to 10 levels.
+- Validates response status codes.
+
+4.Browser Automation:
+
+- Uses chromedp for headless browser checks.
+- Navigates to the final URL.
+- Can be extended to perform content verification.
+
+5. Concurrency Control:
+
+- Employs goroutines and a semaphore pattern.
+- Limits concurrent checks to prevent resource exhaustion.
+
+6. Logging:
+
+- Active domains are logged to active_domains.txt.
+- Inactive domains are logged to inactive_domains.txt.
+- Console output provides real-time feedback.
+
+---
+
+#Dependencies
+
+- Go Modules: For dependency management.
+
+```bash
+go mod init domain_checker
+```
+
+- Chromedp: For headless browser automation.
+
+```bash
+go get -u github.com/chromedp/chromedp@latest
+```
+
+- Chromium or Google Chrome: Required by chromedp.
+
+
+---
+
+
+#Troubleshooting
+
+1. No Output or Errors:
+
+- Ensure Go modules are initialized (go mod init domain_checker).
+- Install dependencies (go get -u github.com/chromedp/chromedp).
+
+2. Chromium Not Found:
+
+-Install Chromium or Chrome:
+
+```bash
+sudo apt update
+sudo apt install chromium
+```
+
+
+3. Go Version Issues:
+
+- Verify Go version:
+
+```bash
+go version
+```
+- Update Go if necessary.
+
+
+4. Permission Errors:
+
+- Run commands without sudo unless necessary.
+- Check file permissions for active_domains.txt and inactive_domains.txt.
+
+
+
+
+
+
+
+
+
 
