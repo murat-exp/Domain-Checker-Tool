@@ -219,4 +219,5 @@ Special thanks to:
 
   ---
 
-  checker.png
+![checker](loader.png)
+
