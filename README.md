@@ -1,7 +1,7 @@
 # Domain-Checker-Tool
 A high-performance Go-based tool for checking the availability and responsiveness of domains, utilizing both HTTP requests and browser automation for comprehensive analysis.
 
-##Features
+## Features
 
 - Concurrent Domain Checking: Utilizes Go's goroutines to check multiple domains in parallel.
 - DNS Resolution: Verifies if the domain can be resolved via DNS.
@@ -12,14 +12,14 @@ A high-performance Go-based tool for checking the availability and responsivenes
 - Detailed Logging: Outputs active and inactive domains to separate files for easy analysis.
 ---
 
-#Installation
-##Prerequisites 
+# Installation
+## Prerequisites 
 
 - Go: Version 1.16 or later. Download Go
 - Chromium or Google Chrome: Required for browser automation with chromedp.
 
 
-##Steps
+## Steps
 1. Clone the Repository
 
 ```bash
@@ -50,7 +50,7 @@ sudo apt install chromium
 
 ---
 
-#Usage
+# Usage
 
 ```bash
 go run domain_checker.go [domain_list_file] [status_codes]
@@ -60,7 +60,7 @@ go run domain_checker.go [domain_list_file] [status_codes]
 - status_codes (Optional): Comma-separated HTTP status codes considered successful (default: 200).
 
 
-##Examples
+## Examples
 
 -Default status code 200:
 
@@ -77,14 +77,14 @@ go run domain_checker.go domains.txt 200,301,302
 
 ----
 
-##Examples Output
+## Examples Output
 
 ```bash
 Active: http://example.com (Status Code: 200)
 Active: https://test.com (Status Code: 200) (Redirected to: newdomain.com)
 ```
 
-##Generated Files
+## Generated Files
 
 - active_domains.txt: List of active domains with optional redirection info.
 - inactive_domains.txt: List of inactive or unreachable domains.
@@ -92,7 +92,7 @@ Active: https://test.com (Status Code: 200) (Redirected to: newdomain.com)
 
 ---
 
-#Configuration
+# Configuration
 
 Customize the tool by modifying variables in domain_checker.go:
 
@@ -123,7 +123,7 @@ maxConcurrentChecks = 100
 
 ---
 
-#How It Works
+# How It Works
 
 1. Domain Reading: Reads domains from a file, ensuring each is non-empty.
 
@@ -154,7 +154,7 @@ maxConcurrentChecks = 100
 
 ---
 
-#Dependencies
+# Dependencies
 
 - Go Modules: For dependency management.
 
@@ -174,7 +174,7 @@ go get -u github.com/chromedp/chromedp@latest
 ---
 
 
-#Troubleshooting
+# Troubleshooting
 
 1. No Output or Errors:
 
